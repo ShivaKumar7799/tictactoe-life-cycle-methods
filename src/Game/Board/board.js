@@ -25,10 +25,10 @@ class Board extends Component {
   handleClick(i){
     const newSquare = this.state.squares.slice();
     
-  if(this.props.winnerStatus == null){
+  if(this.props.winnerStatus === null){
     if(newSquare[i] == null){
       console.log("button clicked", i); 
-      if(this.state.turn == "X"){  
+      if(this.state.turn === "X"){  
           newSquare[i] = "X"
           this.setState({
             turn : "O",
@@ -57,33 +57,33 @@ class Board extends Component {
   }
   callWinner(){
     let turnValue;
-     (this.state.turn == "O") ?  turnValue = "X" :turnValue = "O"
+     (this.state.turn === "O") ?  turnValue = "X" :turnValue = "O"
      
-      if(this.state.squares[0] == this.state.squares[1] && this.state.squares[1] == this.state.squares[2] && this.state.squares[2] !== null){
+      if(this.state.squares[0] === this.state.squares[1] && this.state.squares[1] === this.state.squares[2] && this.state.squares[2] !== null){
        this.props.gameWinner(turnValue)
       } 
-      else if(this.state.squares[3] == this.state.squares[4] && this.state.squares[4] == this.state.squares[5] && this.state.squares[5] !== null){ 
+      else if(this.state.squares[3] === this.state.squares[4] && this.state.squares[4] === this.state.squares[5] && this.state.squares[5] !== null){ 
         this.props.gameWinner(turnValue)
        }
-       else if(this.state.squares[6] == this.state.squares[7] && this.state.squares[7] == this.state.squares[8] && this.state.squares[8] !== null){
+       else if(this.state.squares[6] === this.state.squares[7] && this.state.squares[7] === this.state.squares[8] && this.state.squares[8] !== null){
         this.props.gameWinner(turnValue)
        }
-       else if(this.state.squares[0] == this.state.squares[3] && this.state.squares[3] == this.state.squares[6] && this.state.squares[6] !== null){
+       else if(this.state.squares[0] === this.state.squares[3] && this.state.squares[3] === this.state.squares[6] && this.state.squares[6] !== null){
         this.props.gameWinner(turnValue)
        }
-       else if(this.state.squares[1] == this.state.squares[4] && this.state.squares[4] == this.state.squares[7] && this.state.squares[7] !== null){ 
+       else if(this.state.squares[1] === this.state.squares[4] && this.state.squares[4] === this.state.squares[7] && this.state.squares[7] !== null){ 
         this.props.gameWinner(turnValue)
        }
-       else if(this.state.squares[2] == this.state.squares[5] && this.state.squares[5] == this.state.squares[8] && this.state.squares[8] !== null){
+       else if(this.state.squares[2] === this.state.squares[5] && this.state.squares[5] === this.state.squares[8] && this.state.squares[8] !== null){
         this.props.gameWinner(turnValue)
        }
-       else if(this.state.squares[0] == this.state.squares[4] && this.state.squares[4] == this.state.squares[8] && this.state.squares[8] !== null){
+       else if(this.state.squares[0] === this.state.squares[4] && this.state.squares[4] === this.state.squares[8] && this.state.squares[8] !== null){
         this.props.gameWinner(turnValue)
        }
-       else if(this.state.squares[2] == this.state.squares[4] && this.state.squares[4] == this.state.squares[6] && this.state.squares[6] !== null){
+       else if(this.state.squares[2] === this.state.squares[4] && this.state.squares[4] === this.state.squares[6] && this.state.squares[6] !== null){
         this.props.gameWinner(turnValue)
        }
-        else if(this.state.buttonClicks == 9){
+        else if(this.state.buttonClicks === 9){
           this.props.gamingStatus();
        }
   }
