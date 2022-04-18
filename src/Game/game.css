@@ -1,0 +1,14 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+.gameStatus{
+  font-size: 25px;
+  color: gold;
+  display: flex;
+  justify-content: center;
+}
+
